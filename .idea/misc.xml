@@ -3,14 +3,11 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/mobile-info-service/pom.xml" />
-        <option value="$PROJECT_DIR$/mobile-catalog-service/pom.xml" />
         <option value="$PROJECT_DIR$/rating-info-service/pom.xml" />
+        <option value="$PROJECT_DIR$/mobile-catalog-service/pom.xml" />
+        <option value="$PROJECT_DIR$/mobile-info-service/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
-  <component name="ProjectType">
-    <option name="id" value="jpab" />
-  </component>
 </project>
