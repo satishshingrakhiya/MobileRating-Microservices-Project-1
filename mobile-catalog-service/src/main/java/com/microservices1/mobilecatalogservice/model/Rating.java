@@ -1,8 +1,7 @@
-package com.microservices1.ratinginfoservice.model;
+package com.microservices1.mobilecatalogservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @AllArgsConstructor

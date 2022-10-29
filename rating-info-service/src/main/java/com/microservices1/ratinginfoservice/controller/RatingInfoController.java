@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ratingsdata")
 public class RatingInfoController {
 
-    @RequestMapping("/{movieId}")
-    public Rating getRating(@PathVariable String movieId){
-        return new Rating(movieId, 4);
+    @RequestMapping("/{modelName}")
+    public Rating getRating(@PathVariable String modelName){
+        return new Rating(modelName, (short) 4);
     }
 }
