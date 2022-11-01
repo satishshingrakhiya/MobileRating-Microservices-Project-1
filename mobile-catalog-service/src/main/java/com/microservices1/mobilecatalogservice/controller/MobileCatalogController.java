@@ -3,6 +3,7 @@ package com.microservices1.mobilecatalogservice.controller;
 import com.microservices1.mobilecatalogservice.model.CatalogItem;
 import com.microservices1.mobilecatalogservice.model.Mobile;
 import com.microservices1.mobilecatalogservice.model.Rating;
+import com.microservices1.mobilecatalogservice.model.UserRating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,11 +29,10 @@ public class MobileCatalogController {
     @RequestMapping("{userId}")
     public List<CatalogItem> getCatalog(@PathVariable String userId){
 
-        List<Rating> ratings = Arrays.asList(
-                new Rating("RealMe_7", (short) 4),
-                new Rating("Redmi_Note_4", (short) 3)
-        );
-        return ratings.stream().map(
+
+
+        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId, UserRating.class);
+        return ratings.getUserRating().stream().map(
                 rating -> {
                     Mobile mobile = restTemplate.getForObject("http://localhost:8082/mobile/" + rating.getModelName(), Mobile.class);
                     /*
