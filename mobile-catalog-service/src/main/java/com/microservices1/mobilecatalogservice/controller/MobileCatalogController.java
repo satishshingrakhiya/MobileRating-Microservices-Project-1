@@ -27,10 +27,10 @@ public class MobileCatalogController {
 
 
 
-        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId, UserRating.class);
+        UserRating ratings = restTemplate.getForObject("http://rating-info-service/ratingsdata/users/" + userId, UserRating.class);
         return ratings.getUserRating().stream().map(
                 rating -> {
-                    Mobile mobile = restTemplate.getForObject("http://localhost:8082/mobile/" + rating.getModelName(), Mobile.class);
+                    Mobile mobile = restTemplate.getForObject("http://mobile-info-service/mobile/" + rating.getModelName(), Mobile.class);
                     /*
                     // Using Webclient
                     Mobile mobile = builder.build()
